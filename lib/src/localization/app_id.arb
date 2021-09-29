@@ -1,0 +1,6 @@
+{
+  "appTitle": "appname",
+  "@appTitle": {
+    "description": "Judul dari aplikasi"
+  }
+}
