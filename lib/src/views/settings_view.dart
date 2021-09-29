@@ -7,11 +7,11 @@ import '../controllers/settings_controller.dart';
 /// When a user changes a setting, the SettingsController is updated and
 /// Widgets that listen to the SettingsController are rebuilt.
 class SettingsView extends StatelessWidget {
-  const SettingsView({Key? key, required this.controller}) : super(key: key);
+  const SettingsView({Key? key, required this.settingController}) : super(key: key);
 
   static const routeName = '/settings';
 
-  final SettingsController controller;
+  final SettingsController settingController;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +27,9 @@ class SettingsView extends StatelessWidget {
         // SettingsController is updated, which rebuilds the MaterialApp.
         child: DropdownButton<ThemeMode>(
           // Read the selected themeMode from the controller
-          value: controller.themeMode,
+          value: settingController.themeMode,
           // Call the updateThemeMode method any time the user selects a theme.
-          onChanged: controller.updateThemeMode,
+          onChanged: settingController.updateThemeMode,
           items: const [
             DropdownMenuItem(
               value: ThemeMode.system,

@@ -1,9 +1,11 @@
+import 'package:appname/src/views/layouts/bottom_navigation_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'views/sample_item_details_view.dart';
-import 'views/sample_item_list_view.dart';
+import 'controllers/bottom_navigation_controller.dart';
+import 'views/widgets/sample_item_details_view.dart';
+import 'views/home_view.dart';
 import 'controllers/settings_controller.dart';
 import 'views/settings_view.dart';
 
@@ -12,9 +14,11 @@ class MyApp extends StatelessWidget {
   const MyApp({
     Key? key,
     required this.settingsController,
+    required this.bottomNavigationController,
   }) : super(key: key);
 
   final SettingsController settingsController;
+  final BottomNavigationController bottomNavigationController;
 
   @override
   Widget build(BuildContext context) {
@@ -69,12 +73,12 @@ class MyApp extends StatelessWidget {
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
                   case SettingsView.routeName:
-                    return SettingsView(controller: settingsController);
+                    return SettingsView(settingController: settingsController);
                   case SampleItemDetailsView.routeName:
                     return const SampleItemDetailsView();
-                  case SampleItemListView.routeName:
+                  case HomeView.routeName:
                   default:
-                    return const SampleItemListView();
+                    return BottomNavigationView(settingController: settingsController,bottomNavigationController:bottomNavigationController);
                 }
               },
             );
