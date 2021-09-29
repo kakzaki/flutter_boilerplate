@@ -9,7 +9,8 @@ void main() async {
   // Set up the Controller, which will glue user settings to multiple
   // Flutter Widgets.
   final settingsController = SettingsController(SettingsService());
-  final bottomNavigationController = BottomNavigationController(BottomNavigationService());
+  final bottomNavigationController =
+      BottomNavigationController(BottomNavigationService());
 
   // Load initial data while the splash screen is displayed.
   // This prevents a sudden change when the app is first displayed.
@@ -17,5 +18,8 @@ void main() async {
   await bottomNavigationController.loadBottomNavigation();
   // Run the app and pass in the Controller. The app listens to the
   // Controller for changes, then passes it further down to the View.
-  runApp(MyApp(settingsController: settingsController,bottomNavigationController: bottomNavigationController,));
+  runApp(MyApp(
+    settingsController: settingsController,
+    bottomNavigationController: bottomNavigationController,
+  ));
 }

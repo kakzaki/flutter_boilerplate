@@ -1,5 +1,3 @@
-
-
 /// A service that stores and retrieves bottom navigation.
 ///
 /// By default, this class does not persist bottom navigation. If you'd like to

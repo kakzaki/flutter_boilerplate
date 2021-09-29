@@ -78,7 +78,9 @@ class MyApp extends StatelessWidget {
                     return const SampleItemDetailsView();
                   case HomeView.routeName:
                   default:
-                    return BottomNavigationView(settingController: settingsController,bottomNavigationController:bottomNavigationController);
+                    return BottomNavigationView(
+                        settingController: settingsController,
+                        bottomNavigationController: bottomNavigationController);
                 }
               },
             );

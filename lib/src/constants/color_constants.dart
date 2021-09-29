@@ -7,7 +7,7 @@ class ColorConstants {
   static Color secondaryAppColor = hexToColor('#22DDA6');
   static Color secondaryDarkAppColor = Colors.white;
   static Color tipColor = hexToColor('#B6B6B6');
-  static Color lightGray =const Color(0xFFF6F6F6);
+  static Color lightGray = const Color(0xFFF6F6F6);
   static Color darkGray = const Color(0xFF9F9F9F);
   static Color black = const Color(0xFF000000);
   static Color white = const Color(0xFFFFFFFF);
@@ -20,5 +20,4 @@ Color hexToColor(String hex) {
     int.parse(hex.substring(1), radix: 16) +
         (hex.length == 7 ? 0xff000000 : 0x00000000),
   );
-
 }
