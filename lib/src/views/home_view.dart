@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'layouts/side_navigation_view.dart';
 import 'settings_view.dart';
 import '../models/sample_item.dart';
 import 'widgets/sample_item_details_view.dart';
@@ -7,19 +8,25 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 /// Displays a list of SampleItems.
 class HomeView extends StatelessWidget {
-  const HomeView({
+   HomeView({
     Key? key,
     this.items = const [SampleItem(1), SampleItem(2), SampleItem(3)],
   }) : super(key: key);
 
   static const routeName = '/home';
-
+  final GlobalKey<ScaffoldState> homeKey = GlobalKey<ScaffoldState>();
   final List<SampleItem> items;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const SideNavigationView(),
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () { Scaffold.of(context).openDrawer(); },
+          tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+        ),
         title: Text(AppLocalizations.of(context)!.home,),
         actions: [
           IconButton(
