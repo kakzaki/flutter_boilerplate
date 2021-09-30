@@ -52,7 +52,7 @@ class SideNavigationView extends StatelessWidget {
                       )),
                 ),
                 height: 30,
-                color: Colors.grey[200],
+                color: ColorConstants.lightGray,
               ),
             ),
             ListTile(
