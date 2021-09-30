@@ -1,9 +1,9 @@
 import 'package:appname/src/constants/constants.dart';
 import 'package:appname/src/controllers/bottom_navigation_controller.dart';
 import 'package:appname/src/controllers/settings_controller.dart';
-import 'package:appname/src/views/home_view.dart';
-import 'package:appname/src/views/settings_view.dart';
 import 'package:flutter/material.dart';
+import '../home_view.dart';
+import '../settings_view.dart';
 
 /// Displays a Bottom Navigation
 /// When a user touch an Item in Bottom Navigation, the BottomNavigationController is updated and

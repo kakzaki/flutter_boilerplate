@@ -2,5 +2,7 @@
   "appTitle": "appname",
   "@appTitle": {
     "description": "Judul dari aplikasi"
-  }
+  },
+  "home": "Beranda",
+  "setting": "Pengaturan"
 }

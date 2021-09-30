@@ -72,11 +72,16 @@ class MyApp extends StatelessWidget {
               settings: routeSettings,
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
+                  //Main Page
+                  case HomeView.routeName:
+                    return const HomeView();
                   case SettingsView.routeName:
                     return SettingsView(settingController: settingsController);
+
+                  //Details
                   case SampleItemDetailsView.routeName:
                     return const SampleItemDetailsView();
-                  case HomeView.routeName:
+
                   default:
                     return BottomNavigationView(
                         settingController: settingsController,

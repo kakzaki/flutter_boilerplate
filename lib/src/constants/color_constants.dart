@@ -11,6 +11,9 @@ class ColorConstants {
   static Color darkGray = const Color(0xFF9F9F9F);
   static Color black = const Color(0xFF000000);
   static Color white = const Color(0xFFFFFFFF);
+  static Color defaultColor = Colors.indigo;
+  static Color defaultTextColor = Colors.white;
+  static Color? textColor = Colors.grey[700];
 }
 
 Color hexToColor(String hex) {
