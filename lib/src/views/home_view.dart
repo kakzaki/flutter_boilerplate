@@ -20,11 +20,12 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: homeKey,
       drawer: const SideNavigationView(),
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.menu),
-          onPressed: () { Scaffold.of(context).openDrawer(); },
+          onPressed:() => homeKey.currentState!.openDrawer(),
           tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
         ),
         title: Text(AppLocalizations.of(context)!.home,),

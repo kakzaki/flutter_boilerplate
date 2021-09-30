@@ -35,7 +35,7 @@ class BottomNavigationView extends StatelessWidget {
               backgroundColor: ColorConstants.bottomNavigationBackgroundColor,
               currentIndex: bottomNavigationController.index,
               selectedItemColor: ColorConstants.black,
-              unselectedItemColor: ColorConstants.lightGray,
+              unselectedItemColor: ColorConstants.darkGray,
               type: BottomNavigationBarType.fixed,
               onTap: (newIndex) async {
                 bottomNavigationController.updateIndex(newIndex);

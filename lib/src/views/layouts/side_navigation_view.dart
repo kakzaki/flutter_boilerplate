@@ -1,8 +1,6 @@
 import 'package:appname/src/utils/launch_url.dart';
 import 'package:flutter/material.dart';
 import 'package:appname/src/constants/constants.dart';
-
-import '../home_view.dart';
 import '../settings_view.dart';
 
 /// Displays a Drawer / Side Navigation
@@ -50,25 +48,12 @@ class SideNavigationView extends StatelessWidget {
                       },
                       child: Text(
                         "Powered by kakzaki",
-                        style: TextStyle(color: ColorConstants.lightGray),
+                        style: TextStyle(color: ColorConstants.darkGray),
                       )),
                 ),
                 height: 30,
                 color: Colors.grey[200],
               ),
-            ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text(
-                "Home",
-                style: TextStyle(fontSize: CommonConstants.normalText),
-              ),
-              onTap: () {
-                Navigator.restorablePushReplacementNamed(
-                  context,
-                  HomeView.routeName,
-                );
-              },
             ),
             ListTile(
               leading: const Icon(Icons.settings),
@@ -77,7 +62,7 @@ class SideNavigationView extends StatelessWidget {
                 style: TextStyle(fontSize: CommonConstants.normalText),
               ),
               onTap: () {
-                Navigator.restorablePushReplacementNamed(
+                Navigator.restorablePushNamed(
                   context,
                   SettingsView.routeName,
                 );
