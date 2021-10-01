@@ -4,5 +4,6 @@
     "description": "Judul dari aplikasi"
   },
   "home": "Beranda",
-  "setting": "Pengaturan"
+  "setting": "Pengaturan",
+  "counter": "Penghitung"
 }

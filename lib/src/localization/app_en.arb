@@ -4,5 +4,6 @@
     "description": "The title of the application"
   },
   "home": "Home",
-  "setting": "Setting"
+  "setting": "Setting",
+  "counter": "Counter"
 }

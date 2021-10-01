@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'controllers/bottom_navigation_controller.dart';
+import 'views/counter_view.dart';
 import 'views/widgets/sample_item_details_view.dart';
 import 'views/home_view.dart';
 import 'controllers/settings_controller.dart';
@@ -75,6 +76,8 @@ class MyApp extends StatelessWidget {
                   //Main Page
                   case HomeView.routeName:
                     return HomeView();
+                  case CounterView.routeName:
+                    return CounterView();
                   case SettingsView.routeName:
                     return SettingsView(settingController: settingsController);
 
