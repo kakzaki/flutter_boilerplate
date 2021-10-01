@@ -2,6 +2,7 @@ import 'package:appname/src/constants/constants.dart';
 import 'package:appname/src/controllers/bottom_navigation_controller.dart';
 import 'package:appname/src/controllers/settings_controller.dart';
 import 'package:flutter/material.dart';
+import '../counter_view.dart';
 import '../home_view.dart';
 import '../settings_view.dart';
 
@@ -24,7 +25,7 @@ class BottomNavigationView extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> viewScreen = [
       HomeView(),
-      HomeView(),
+      CounterView(),
       SettingsView(settingController: settingController)
     ];
     return AnimatedBuilder(
@@ -47,6 +48,12 @@ class BottomNavigationView extends StatelessWidget {
                     Icons.home,
                   ),
                   label: "Home",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.add_circle_outline_rounded,
+                  ),
+                  label: "Counter",
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(
