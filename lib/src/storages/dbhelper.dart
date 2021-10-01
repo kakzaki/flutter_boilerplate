@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:appname/src/models/user.dart';
 import 'package:hive/hive.dart';
 
-
 class DBHelper {
   static Box? _db;
 
@@ -33,8 +32,7 @@ class DBHelper {
 
   Future<User> getUser() async {
     Box dbClient = await db;
-    User user =dbClient.get('User');
+    User user = dbClient.get('User');
     return user;
   }
-
 }

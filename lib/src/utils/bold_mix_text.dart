@@ -1,6 +1,5 @@
-
 String firstFewWords(String bigSentence) {
-  int startIndex = 0, indexOfSpace=0;
+  int startIndex = 0, indexOfSpace = 0;
   for (int i = 0; i < 1; i++) {
     indexOfSpace = bigSentence.indexOf(' ', startIndex);
     if (indexOfSpace == -1) {
@@ -13,7 +12,7 @@ String firstFewWords(String bigSentence) {
 }
 
 String restOfWords(String bigSentence) {
-  int startIndex = 0, indexOfSpace=0;
+  int startIndex = 0, indexOfSpace = 0;
   for (int i = 0; i < 1; i++) {
     indexOfSpace = bigSentence.indexOf(' ', startIndex);
     if (indexOfSpace == -1) {

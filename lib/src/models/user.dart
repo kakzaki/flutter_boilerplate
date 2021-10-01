@@ -6,9 +6,9 @@ class User {
   String? phone;
   String? image;
 
-  User(this.id, this.name,this.password,this.email,this.phone,this.image);
+  User(this.id, this.name, this.password, this.email, this.phone, this.image);
 
-  static final columns = [ "id","name","password", "email", "phone","image"];
+  static final columns = ["id", "name", "password", "email", "phone", "image"];
 
   User.fromMap(Map map) {
     id = map["id"];
@@ -21,14 +21,13 @@ class User {
 
   Map toMap() {
     Map<String, dynamic> map = {
-    "id" :id,
-    "name" :name,
-    "password" : password,
-    "email" :email,
-    "phone" :phone,
-    "image" :image
+      "id": id,
+      "name": name,
+      "password": password,
+      "email": email,
+      "phone": phone,
+      "image": image
     };
     return map;
   }
 }
-

@@ -49,8 +49,8 @@ class Swipe extends StatelessWidget {
   /// Default: 300
   final double horizontalMinVelocity;
 
-   const Swipe(
-       {Key? key,
+  const Swipe({
+    Key? key,
     required this.child,
     required this.onSwipeUp,
     required this.onSwipeDown,
@@ -81,27 +81,27 @@ class Swipe extends StatelessWidget {
         updateVerticalDragDetails = dragDetails;
       },
       onVerticalDragEnd: (endDetails) {
-          double dx = (updateVerticalDragDetails.globalPosition.dx -
-                  startVerticalDragDetails.globalPosition.dx)
-              .abs();
-          double dy = (updateVerticalDragDetails.globalPosition.dy -
-                  startVerticalDragDetails.globalPosition.dy)
-              .abs();
-          double velocity = endDetails.primaryVelocity ?? 0.0;
+        double dx = (updateVerticalDragDetails.globalPosition.dx -
+                startVerticalDragDetails.globalPosition.dx)
+            .abs();
+        double dy = (updateVerticalDragDetails.globalPosition.dy -
+                startVerticalDragDetails.globalPosition.dy)
+            .abs();
+        double velocity = endDetails.primaryVelocity ?? 0.0;
 
-          if (dx > verticalMaxWidthThreshold) return;
-          if (dy < verticalMinDisplacement) return;
-          if (velocity.abs() < verticalMinVelocity) return;
+        if (dx > verticalMaxWidthThreshold) return;
+        if (dy < verticalMinDisplacement) return;
+        if (velocity.abs() < verticalMinVelocity) return;
 
-          if (velocity < 0) {
-            //Swipe Up
-            onSwipeUp.call();
-          }
+        if (velocity < 0) {
+          //Swipe Up
+          onSwipeUp.call();
+        }
 
-          if (velocity > 0) {
-            //Swipe Down
-            onSwipeDown.call();
-          }
+        if (velocity > 0) {
+          //Swipe Down
+          onSwipeDown.call();
+        }
       },
       onHorizontalDragStart: (dragDetails) {
         startHorizontalDragDetails = dragDetails;
@@ -110,28 +110,27 @@ class Swipe extends StatelessWidget {
         updateHorizontalDragDetails = dragDetails;
       },
       onHorizontalDragEnd: (endDetails) {
-          double dx = (updateHorizontalDragDetails.globalPosition.dx -
-                  startHorizontalDragDetails.globalPosition.dx)
-              .abs();
-          double dy = (updateHorizontalDragDetails.globalPosition.dy -
-                  startHorizontalDragDetails.globalPosition.dy)
-              .abs();
-          double velocity = endDetails.primaryVelocity ?? 0.0;
+        double dx = (updateHorizontalDragDetails.globalPosition.dx -
+                startHorizontalDragDetails.globalPosition.dx)
+            .abs();
+        double dy = (updateHorizontalDragDetails.globalPosition.dy -
+                startHorizontalDragDetails.globalPosition.dy)
+            .abs();
+        double velocity = endDetails.primaryVelocity ?? 0.0;
 
-          if (dy > horizontalMaxHeightThreshold) return;
-          if (dx < horizontalMinDisplacement) return;
-          if (velocity.abs() < horizontalMinVelocity) return;
+        if (dy > horizontalMaxHeightThreshold) return;
+        if (dx < horizontalMinDisplacement) return;
+        if (velocity.abs() < horizontalMinVelocity) return;
 
-          if (velocity < 0) {
-            //Swipe Left
-            onSwipeLeft.call();
-          }
+        if (velocity < 0) {
+          //Swipe Left
+          onSwipeLeft.call();
+        }
 
-          if (velocity > 0) {
-            //Swipe Right
-            onSwipeRight.call();
-          }
-
+        if (velocity > 0) {
+          //Swipe Right
+          onSwipeRight.call();
+        }
       },
     );
   }

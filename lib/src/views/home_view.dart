@@ -8,7 +8,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 /// Displays a list of SampleItems.
 class HomeView extends StatelessWidget {
-   HomeView({
+  HomeView({
     Key? key,
     this.items = const [SampleItem(1), SampleItem(2), SampleItem(3)],
   }) : super(key: key);
@@ -25,10 +25,12 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.menu),
-          onPressed:() => homeKey.currentState!.openDrawer(),
+          onPressed: () => homeKey.currentState!.openDrawer(),
           tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
         ),
-        title: Text(AppLocalizations.of(context)!.home,),
+        title: Text(
+          AppLocalizations.of(context)!.home,
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
