@@ -24,7 +24,7 @@ class BottomNavigationController with ChangeNotifier {
   /// local database or the internet. The controller only knows it can load the
   /// bottomNavigation from the service.
   Future<void> loadBottomNavigation() async {
-    _index = await _bottomNavigationService.index();
+    _index = _bottomNavigationService.index();
 
     // Important! Inform listeners a change has occurred.
     notifyListeners();
@@ -45,6 +45,6 @@ class BottomNavigationController with ChangeNotifier {
 
     // Persist the changes to a local database or the internet using the
     // BottomNavigationService.
-    await _bottomNavigationService.update(newIndex);
+    _bottomNavigationService.update(newIndex);
   }
 }

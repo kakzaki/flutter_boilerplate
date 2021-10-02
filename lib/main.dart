@@ -11,11 +11,10 @@ void main() async {
   final settingsController = SettingsController(SettingsService());
   final bottomNavigationController =
       BottomNavigationController(BottomNavigationService());
-
   // Load initial data while the splash screen is displayed.
   // This prevents a sudden change when the app is first displayed.
   await settingsController.loadSettings();
-  await bottomNavigationController.loadBottomNavigation();
+  bottomNavigationController.loadBottomNavigation();
   // Run the app and pass in the Controller. The app listens to the
   // Controller for changes, then passes it further down to the View.
   runApp(MyApp(

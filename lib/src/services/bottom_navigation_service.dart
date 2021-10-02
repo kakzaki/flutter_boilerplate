@@ -5,10 +5,10 @@
 /// you'd like to store settings on a web server, use the http package.
 class BottomNavigationService {
   /// Loads the index from local or remote storage.
-  Future<int> index() async => 0;
+  int index() => 0;
 
   /// Persists the index to local or remote storage.
-  Future<void> update(int index) async {
+  void update(int index) async {
     // Use the shared_preferences package to persist settings locally or the
     // http package to persist settings over the network.
   }

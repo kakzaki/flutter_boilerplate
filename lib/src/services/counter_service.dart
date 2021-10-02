@@ -6,10 +6,10 @@
 /// you'd like to store settings on a web server, use the http package.
 class CounterService {
   /// Loads the User's preferred Counter from local or remote storage.
-  Future<int> counter() async => 0;
+  int? counter() => 0;
 
   /// Persists the user's preferred Counter to local or remote storage.
-  Future<void> updateCounter(int counter) async {
+  void updateCounter(int counter) async {
     // Use the shared_preferences package to persist settings locally or the
     // http package to persist settings over the network.
   }

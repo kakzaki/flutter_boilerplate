@@ -77,7 +77,7 @@ class MyApp extends StatelessWidget {
                   case HomeView.routeName:
                     return HomeView();
                   case CounterView.routeName:
-                    return CounterView();
+                    return const CounterView();
                   case SettingsView.routeName:
                     return SettingsView(settingController: settingsController);
 

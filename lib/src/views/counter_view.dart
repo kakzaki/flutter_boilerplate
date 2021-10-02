@@ -3,12 +3,23 @@ import 'package:appname/src/services/counter_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class CounterView extends StatelessWidget {
-  CounterView({Key? key}) : super(key: key);
+class CounterView extends StatefulWidget {
+  const CounterView({Key? key}) : super(key: key);
 
   static const routeName = '/counter';
 
+  @override
+  State<CounterView> createState() => _CounterViewState();
+}
+
+class _CounterViewState extends State<CounterView> {
   final counterController = CounterController(CounterService());
+
+  @override
+  void initState() {
+    counterController.loadCounter();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +34,14 @@ class CounterView extends StatelessWidget {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '${counterController.counter}',
-              style: Theme.of(context).textTheme.headline4,
+            AnimatedBuilder(
+              animation: counterController,
+              builder: (context, snapshot) {
+                return Text(
+                  '${counterController.counter}',
+                  style: Theme.of(context).textTheme.headline4,
+                );
+              }
             ),
           ],
         ),

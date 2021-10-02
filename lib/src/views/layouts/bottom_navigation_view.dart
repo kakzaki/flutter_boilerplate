@@ -25,7 +25,7 @@ class BottomNavigationView extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> viewScreen = [
       HomeView(),
-      CounterView(),
+      const CounterView(),
       SettingsView(settingController: settingController)
     ];
     return AnimatedBuilder(

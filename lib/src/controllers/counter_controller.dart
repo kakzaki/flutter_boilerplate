@@ -15,32 +15,32 @@ class CounterController with ChangeNotifier {
 
   // Make Counter a private variable so it is not updated directly without
   // also persisting the changes with the CounterService.
-  late int _counter;
+  int? _counter=0;
 
-  // Allow Widgets to read the user's preferred Counter.
-  int get counter => _counter;
+  // Allow Widgets to read the Counter.
+  int? get counter => _counter;
 
-  /// Load the user's settings from the CounterService. It may load from a
+  /// Load the Counter from the CounterService. It may load from a
   /// local database or the internet. The controller only knows it can load the
   /// settings from the service.
   Future<void> loadCounter() async {
-    _counter = await _counterService.counter();
+    _counter =  _counterService.counter();
 
     // Important! Inform listeners a change has occurred.
     notifyListeners();
   }
 
-  /// Update and persist the Counter based on the user's selection.
+  /// Update and persist the Counter based on the user's change.
   void incrementCounter() async {
 
-    // Otherwise, store the new theme mode in memory
-    _counter = _counter+1;
+    // Otherwise, store the new counter in memory
+    _counter = (_counter!+1);
 
     // Important! Inform listeners a change has occurred.
     notifyListeners();
 
     // Persist the changes to a local database or the internet using the
     // CounterService.
-    await _counterService.updateCounter(_counter);
+    _counterService.updateCounter(_counter!);
   }
 }
